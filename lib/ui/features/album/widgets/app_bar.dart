@@ -27,7 +27,7 @@ class AlbumAppBar extends StatelessWidget implements PreferredSizeWidget {
                 centerTitle: false,
                 title: const Text(
                   'MT Gallery App',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  style: TextStyle(color: Colors.white, fontSize: fontXL),
                 ),
                 actions: [
                   Visibility(

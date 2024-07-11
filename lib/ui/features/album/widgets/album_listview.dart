@@ -49,10 +49,10 @@ Widget AlbumListView(BuildContext context, AlbumViewModel viewModel,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         color: Colors.black,
-                        fontSize: 18,
+                        fontSize: fontS,
                         fontWeight: FontWeight.bold),
                   ),
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.folder_rounded,
                     color: primaryColor,
                     size: 45,

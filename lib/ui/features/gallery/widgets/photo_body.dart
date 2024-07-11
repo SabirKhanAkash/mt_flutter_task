@@ -63,6 +63,7 @@ Widget PhotoBody(
             Visibility(
               visible: !data.searchQuery.isNotEmpty,
               child: Container(
+                width: MediaQuery.of(context).size.width,
                 padding:
                     const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
                 child: Row(
@@ -97,12 +98,29 @@ Widget PhotoBody(
                                 context, viewModel, data, null, albumId)
                             : ()
                       },
-                      child: const Text("Previous",
-                          style: TextStyle(color: Colors.white, fontSize: 16)),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.arrow_back_ios_rounded,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                          Text("Prev",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: fontXS)),
+                        ],
+                      ),
                     ),
                     Text('Page ${data.pageNo} - 5 of 50',
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 14)),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            overflow: TextOverflow.ellipsis,
+                            fontSize: fontXXS)),
                     ElevatedButton(
                       style: ButtonStyle(
                         shape: WidgetStateProperty.resolveWith<OutlinedBorder>(
@@ -123,15 +141,30 @@ Widget PhotoBody(
                           }
                         }),
                       ),
-                      onPressed: () => data.pageNo < 10
+                      onPressed: () => data.pageNo < 5
                           ? {
                               data.goNextPage(),
                               getPhotoList(
                                   context, viewModel, data, null, albumId)
                             }
                           : (),
-                      child: const Text("Next",
-                          style: TextStyle(color: Colors.white, fontSize: 16)),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text("Next",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: fontXS)),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.white,
+                            size: 20,
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -156,7 +189,7 @@ Widget PhotoBody(
                                 "No Photo found",
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(fontSize: 18),
+                                style: TextStyle(fontSize: fontL),
                                 textAlign: TextAlign.center,
                               ),
                             )
@@ -181,7 +214,7 @@ Widget PhotoBody(
                                 "No such photo found, need to type the exact title",
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(fontSize: 17),
+                                style: TextStyle(fontSize: fontM),
                                 textAlign: TextAlign.center,
                               ),
                             )

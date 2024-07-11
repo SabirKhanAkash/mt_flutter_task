@@ -27,12 +27,13 @@ class PhotoAppBar extends StatelessWidget implements PreferredSizeWidget {
                 elevation: 0,
                 toolbarHeight: 80,
                 centerTitle: false,
-                title: Text(
+                title: SelectableText(
+                  cursorColor: primaryColor,
                   album.title ?? "Untitled",
                   maxLines: 2,
                   style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: fontM,
                       overflow: TextOverflow.ellipsis),
                 ),
                 leading: GestureDetector(
@@ -62,7 +63,7 @@ class PhotoAppBar extends StatelessWidget implements PreferredSizeWidget {
                           textEditingController.clear();
                           data.toggleSearchBoxVisibility();
                           getPhotoList(context, photoViewModel, data, null,
-                              album.albumId?.toInt());
+                              album.id?.toInt());
                         },
                       ),
                     ),

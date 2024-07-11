@@ -33,6 +33,10 @@ class _PhotoScreenState extends State<PhotoScreen> {
     );
     _data = Provider.of<PhotoDataProvider>(context, listen: false);
     _textEditingController = TextEditingController();
+    Future.delayed(Duration.zero, () {
+      _data.init();
+    });
+
     getPhotoList(context, _viewModel, _data, null, widget.album.id);
   }
 
