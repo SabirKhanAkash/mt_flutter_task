@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mt_flutter_task/utils/constants.dart';
 
 Future<void> showCustomToast(
     BuildContext context, String text, String type) async {
@@ -19,13 +20,13 @@ Future<void> showCustomToast(
       mainAxisSize: MainAxisSize.max,
       children: [
         _getIcon(context, type),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Expanded(
           child: Text(
             text, // Use the provided `text` parameter here
             style: TextStyle(
-              fontFamily: 'balooda2',
-              fontSize: 16,
+              fontFamily: 'rubik',
+              fontSize: fontS,
               color: textColor,
             ),
           ),
@@ -72,11 +73,11 @@ Color _getColor(BuildContext context, String type) {
 Color _getTextColor(BuildContext context, String type) {
   switch (type) {
     case "positive":
-      return Color(0xff3c763d); // Dark green
+      return const Color(0xff3c763d); // Dark green
     case "neutral":
-      return Color(0xff3c647c); // Dark blue
+      return const Color(0xff3c647c); // Dark blue
     case "negative":
-      return Color(0xffab527b); // Dark red
+      return const Color(0xffab527b); // Dark red
     default:
       return Theme.of(context)
           .textTheme

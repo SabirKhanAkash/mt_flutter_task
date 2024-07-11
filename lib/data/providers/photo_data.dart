@@ -82,4 +82,16 @@ class PhotoDataProvider extends ChangeNotifier {
     _searchApiResponse = response;
     notifyListeners();
   }
+
+  void init() {
+    _isLoading = true;
+    _isDataEmpty = true;
+    _isSearchDataEmpty = true;
+    _apiResponse = null;
+    _searchApiResponse = null;
+    _searchQuery = '';
+    _searchBoxVisibility = false;
+    _pageNo = 1;
+    notifyListeners();
+  }
 }

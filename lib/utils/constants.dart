@@ -19,3 +19,10 @@ const primaryDarkColor = Color(0xff001931);
 const lightGray = Color(0xff4dffffff);
 const primaryLightColor = Color(0xff006EAC);
 const lightWhite = Color(0xffEBF2FC);
+
+const double fontXXS = 12;
+const double fontXS = 14;
+const double fontS = 16;
+const double fontM = 17;
+const double fontL = 18;
+const double fontXL = 25;
