@@ -46,11 +46,6 @@ class _PhotoScreenState extends State<PhotoScreen> {
     super.dispose();
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
-
   Future<void> _refresh() async {
     getPhotoList(context, _viewModel, _data, null, widget.album.id);
   }

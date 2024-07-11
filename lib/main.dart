@@ -15,10 +15,6 @@ Future<void> main() async {
   ]).then((_) {
     runApp(const MyApp());
   });
-  // Firebase.initializeApp(
-  //     // options: DefaultFirebaseOptions.currentPlatform,
-  //     );
-  // runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -36,7 +32,7 @@ class MyAppState extends State<MyApp> {
   }
 
   Future<void> hideScreen() async {
-    Future.delayed(const Duration(milliseconds: 600), () {
+    Future.delayed(const Duration(milliseconds: 800), () {
       FlutterSplashScreen.hide();
     });
   }

@@ -25,7 +25,7 @@ class PhotoListPreviewScreen extends StatelessWidget {
         centerTitle: true,
         title: SelectableText(
           cursorColor: primaryColor,
-          '$imageType',
+          imageType,
           maxLines: 2,
           style: const TextStyle(color: Colors.white, fontSize: fontL),
         ),

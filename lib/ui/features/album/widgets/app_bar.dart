@@ -35,8 +35,9 @@ class AlbumAppBar extends StatelessWidget implements PreferredSizeWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: IconButton(
-                        icon: const Icon(Icons.search_rounded,
-                            size: 35, color: Colors.white),
+                        icon: Icon(Icons.search_rounded,
+                            size: data.searchBoxVisibility ? 40 : 35,
+                            color: Colors.white),
                         onPressed: () {
                           textEditingController.clear();
                           data.toggleSearchBoxVisibility();

@@ -18,7 +18,7 @@ Widget PhotoListView(BuildContext context, PhotoViewModel viewModel,
           ? data.searchApiResponse?.dataList![index]
           : data.apiResponse?.dataList![index];
       return Container(
-        margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 0),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
@@ -46,7 +46,7 @@ Widget PhotoListView(BuildContext context, PhotoViewModel viewModel,
               children: [
                 ListTile(
                   title: Text(
-                    photo?.title ?? 'N/A',
+                    photo?.title ?? 'Untitled',
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

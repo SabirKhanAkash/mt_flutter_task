@@ -52,7 +52,6 @@ class PhotoRepository {
       }
     } on Exception catch (error) {
       _data.dismissLoading();
-      // _data.setNoInternetScreen();
       showCustomToast(context, "${error.toString()}", "negative");
       throw Exception('An Error Occurred: ${error.toString()}');
     }
@@ -96,7 +95,6 @@ class PhotoRepository {
       }
     } on Exception catch (error) {
       _data.dismissLoading();
-      // _data.setNoInternetScreen();
       showCustomToast(context, "${error.toString()}", "negative");
       throw Exception('An Error Occurred: ${error.toString()}');
     }

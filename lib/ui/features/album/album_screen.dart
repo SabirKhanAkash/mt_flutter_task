@@ -39,11 +39,6 @@ class _AlbumScreenState extends State<AlbumScreen> {
     super.dispose();
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
-
   Future<void> _refresh() async {
     getAlbumList(context, _viewModel, _data, null);
   }

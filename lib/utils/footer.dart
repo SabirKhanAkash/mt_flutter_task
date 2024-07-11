@@ -13,15 +13,15 @@ class Footer extends StatelessWidget {
           'v${getVersionName()}',
           style: const TextStyle(
               color: Colors.grey,
-              fontFamily: 'balooda2',
+              fontFamily: 'rubik',
               fontWeight: FontWeight.bold,
               fontSize: 12),
         ),
         const Text(
-          'By Akash',
+          'by Akash',
           style: TextStyle(
               color: Colors.grey,
-              fontFamily: 'balooda2',
+              fontFamily: 'rubik',
               fontWeight: FontWeight.bold,
               fontSize: 12),
         ),

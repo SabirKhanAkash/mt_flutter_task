@@ -4,6 +4,7 @@ import 'package:mt_flutter_task/ui/features/album/widgets/album_list.dart';
 import 'package:mt_flutter_task/ui/features/album/widgets/pagination_buttons.dart';
 import 'package:mt_flutter_task/ui/features/album/widgets/search_bar.dart';
 import 'package:mt_flutter_task/ui/features/album/widgets/searched_album_list.dart';
+import 'package:mt_flutter_task/utils/footer.dart';
 import 'package:mt_flutter_task/viewmodel/album_view_model.dart';
 
 Widget AlbumBody(BuildContext context, AlbumDataProvider data,
@@ -20,6 +21,7 @@ Widget AlbumBody(BuildContext context, AlbumDataProvider data,
             paginationButtons(context, data, viewModel, textEditingController),
             albumList(context, data, viewModel, textEditingController),
             searchedAlbumList(context, data, viewModel, textEditingController),
+            const Footer()
           ],
         ),
       )

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mt_flutter_task/data/models/data_model.dart';
 import 'package:mt_flutter_task/data/providers/album_data.dart';
 import 'package:mt_flutter_task/ui/features/gallery/photo_screen.dart';
-import 'package:mt_flutter_task/utils/console.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 import 'package:mt_flutter_task/viewmodel/album_view_model.dart';
 
@@ -31,7 +30,6 @@ Widget AlbumListView(BuildContext context, AlbumViewModel viewModel,
             borderRadius: BorderRadius.circular(8),
             onTap: () {
               if (album != null) {
-                Console.log("album: ${album.id}");
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -44,7 +42,7 @@ Widget AlbumListView(BuildContext context, AlbumViewModel viewModel,
               children: [
                 ListTile(
                   title: Text(
-                    album?.title ?? 'N/A',
+                    album?.title ?? 'Untitled',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

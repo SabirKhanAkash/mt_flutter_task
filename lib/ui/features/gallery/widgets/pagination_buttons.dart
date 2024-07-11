@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mt_flutter_task/data/providers/album_data.dart';
-import 'package:mt_flutter_task/ui/features/album/utils/get_album_list.dart';
+import 'package:mt_flutter_task/data/providers/photo_data.dart';
+import 'package:mt_flutter_task/ui/features/gallery/utils/get_photo_list.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
-import 'package:mt_flutter_task/viewmodel/album_view_model.dart';
+import 'package:mt_flutter_task/viewmodel/photo_view_model.dart';
 
 Widget paginationButtons(
-  BuildContext context,
-  AlbumDataProvider data,
-  AlbumViewModel viewModel,
-  TextEditingController textEditingController,
-) {
+    BuildContext context,
+    PhotoDataProvider data,
+    PhotoViewModel viewModel,
+    TextEditingController textEditingController,
+    int? albumId) {
   return Visibility(
     visible: !data.searchQuery.isNotEmpty,
     child: Container(
@@ -21,11 +21,11 @@ Widget paginationButtons(
         mainAxisSize: MainAxisSize.max,
         children: [
           ElevatedButton(
-            style: albumPrevButtonStyle(data),
+            style: photoPrevButtonStyle(data),
             onPressed: () => {
               data.goPreviousPage(),
               data.pageNo >= 1
-                  ? getAlbumList(context, viewModel, data, null)
+                  ? getPhotoList(context, viewModel, data, null, albumId)
                   : ()
             },
             child: const Row(
@@ -45,16 +45,17 @@ Widget paginationButtons(
               ],
             ),
           ),
-          Text('Page ${data.pageNo} - 10 of 100',
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(color: Colors.black, fontSize: fontXXS)),
+          Text('Page ${data.pageNo} - 5 of 50',
+              style: const TextStyle(
+                  color: Colors.black,
+                  overflow: TextOverflow.ellipsis,
+                  fontSize: fontXXS)),
           ElevatedButton(
-            style: albumNextButtonStyle(data),
-            onPressed: () => data.pageNo < 10
+            style: photoNextButtonStyle(data),
+            onPressed: () => data.pageNo < 5
                 ? {
                     data.goNextPage(),
-                    getAlbumList(context, viewModel, data, null)
+                    getPhotoList(context, viewModel, data, null, albumId)
                   }
                 : (),
             child: const Row(
