@@ -52,20 +52,31 @@ class PhotoAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     )),
                 actions: [
-                  Visibility(
-                    visible: true,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IconButton(
-                        icon: const Icon(Icons.search_rounded,
-                            size: 35, color: Colors.white),
-                        onPressed: () {
-                          textEditingController.clear();
-                          data.toggleSearchBoxVisibility();
-                          getPhotoList(context, photoViewModel, data, null,
-                              album.id?.toInt());
-                        },
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(
+                          data.isGridViewActive
+                              ? Icons.format_list_bulleted
+                              : Icons.grid_view_rounded,
+                          color: Colors.white),
+                      onPressed: () {
+                        data.switchView();
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(Icons.search_rounded,
+                          size: data.searchBoxVisibility ? 40 : 35,
+                          color: Colors.white),
+                      onPressed: () {
+                        textEditingController.clear();
+                        data.toggleSearchBoxVisibility();
+                        getPhotoList(context, photoViewModel, data, null,
+                            album.id?.toInt());
+                      },
                     ),
                   ),
                 ]),

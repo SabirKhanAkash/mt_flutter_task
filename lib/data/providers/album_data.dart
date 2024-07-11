@@ -2,7 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:mt_flutter_task/data/models/api_response_model.dart';
 
 class AlbumDataProvider extends ChangeNotifier {
-  bool _isLoading = true, _isDataEmpty = true, _isSearchDataEmpty = true;
+  bool _isLoading = true,
+      _isDataEmpty = true,
+      _isSearchDataEmpty = true,
+      _isListViewActive = true,
+      _isGridViewActive = false;
   ApiResponse? _apiResponse = null;
   ApiResponse? _searchApiResponse = null;
   String _searchQuery = '';
@@ -10,6 +14,10 @@ class AlbumDataProvider extends ChangeNotifier {
   int _pageNo = 1;
 
   bool get isLoading => _isLoading;
+
+  bool get isListViewActive => _isListViewActive;
+
+  bool get isGridViewActive => _isGridViewActive;
 
   bool get isDataEmpty => _isDataEmpty;
 
@@ -24,6 +32,12 @@ class AlbumDataProvider extends ChangeNotifier {
   int get pageNo => _pageNo;
 
   bool get searchBoxVisibility => _searchBoxVisibility;
+
+  void switchView() {
+    _isListViewActive = !_isListViewActive;
+    _isGridViewActive = !_isGridViewActive;
+    notifyListeners();
+  }
 
   void toggleSearchBoxVisibility() {
     _searchQuery = '';

@@ -30,20 +30,30 @@ class AlbumAppBar extends StatelessWidget implements PreferredSizeWidget {
                   style: TextStyle(color: Colors.white, fontSize: fontXL),
                 ),
                 actions: [
-                  Visibility(
-                    visible: true,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IconButton(
-                        icon: Icon(Icons.search_rounded,
-                            size: data.searchBoxVisibility ? 40 : 35,
-                            color: Colors.white),
-                        onPressed: () {
-                          textEditingController.clear();
-                          data.toggleSearchBoxVisibility();
-                          getAlbumList(context, albumViewModel, data, null);
-                        },
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(
+                          data.isGridViewActive
+                              ? Icons.format_list_bulleted
+                              : Icons.grid_view_rounded,
+                          color: Colors.white),
+                      onPressed: () {
+                        data.switchView();
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(Icons.search_rounded,
+                          size: data.searchBoxVisibility ? 40 : 35,
+                          color: Colors.white),
+                      onPressed: () {
+                        textEditingController.clear();
+                        data.toggleSearchBoxVisibility();
+                        getAlbumList(context, albumViewModel, data, null);
+                      },
                     ),
                   ),
                 ]),

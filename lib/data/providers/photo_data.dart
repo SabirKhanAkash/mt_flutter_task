@@ -2,12 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:mt_flutter_task/data/models/api_response_model.dart';
 
 class PhotoDataProvider extends ChangeNotifier {
-  bool _isLoading = true, _isDataEmpty = true, _isSearchDataEmpty = true;
+  bool _isLoading = true,
+      _isDataEmpty = true,
+      _isSearchDataEmpty = true,
+      _isListViewActive = true,
+      _isGridViewActive = false;
   ApiResponse? _apiResponse = null;
   ApiResponse? _searchApiResponse = null;
   String _searchQuery = '';
   bool _searchBoxVisibility = false;
   int _pageNo = 1;
+
+  bool get isListViewActive => _isListViewActive;
+
+  bool get isGridViewActive => _isGridViewActive;
 
   bool get isLoading => _isLoading;
 
@@ -24,6 +32,12 @@ class PhotoDataProvider extends ChangeNotifier {
   int get pageNo => _pageNo;
 
   bool get searchBoxVisibility => _searchBoxVisibility;
+
+  void switchView() {
+    _isListViewActive = !_isListViewActive;
+    _isGridViewActive = !_isGridViewActive;
+    notifyListeners();
+  }
 
   void toggleSearchBoxVisibility() {
     _searchQuery = '';
@@ -92,6 +106,8 @@ class PhotoDataProvider extends ChangeNotifier {
     _searchQuery = '';
     _searchBoxVisibility = false;
     _pageNo = 1;
+    _isListViewActive = true;
+    _isGridViewActive = false;
     notifyListeners();
   }
 }

@@ -13,26 +13,27 @@ Widget albumList(
 ) {
   return Visibility(
     visible: !data.searchQuery.isNotEmpty,
-    child: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: data.isLoading
-            ? const Loader(
-                type: "on_center",
-                color: primaryColor,
-              )
-            : (data.isDataEmpty
-                ? Container(
-                    alignment: Alignment.center,
-                    height: MediaQuery.of(context).size.height / 2.3,
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: const Text(
-                      "No Album found",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: fontL),
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                : AlbumListView(context, viewModel, data, false))),
+    child: Container(
+      width: MediaQuery.of(context).size.width,
+      child: data.isLoading
+          ? const Loader(
+              type: "on_center",
+              color: primaryColor,
+            )
+          : (data.isDataEmpty
+              ? Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height / 2.3,
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: const Text(
+                    "No Album found",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: fontL),
+                    textAlign: TextAlign.center,
+                  ),
+                )
+              : AlbumListView(context, viewModel, data, false)),
+    ),
   );
 }
