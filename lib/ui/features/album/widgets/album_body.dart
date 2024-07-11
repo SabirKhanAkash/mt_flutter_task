@@ -43,7 +43,8 @@ Widget AlbumBody(BuildContext context, AlbumDataProvider data,
                 Visibility(
                     visible: data.searchQuery.isNotEmpty,
                     child: Expanded(
-                        child: searchAlbumGridView(context, data, true)))
+                        child: searchAlbumGridView(context, data, true))),
+                const Footer()
               ],
             ))
     ],

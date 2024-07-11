@@ -9,6 +9,9 @@ class Footer extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        const SizedBox(
+          height: 10,
+        ),
         Text(
           'v${getVersionName()}',
           style: const TextStyle(
@@ -26,7 +29,7 @@ class Footer extends StatelessWidget {
               fontSize: 12),
         ),
         const SizedBox(
-          height: 20,
+          height: 10,
         ),
       ],
     );

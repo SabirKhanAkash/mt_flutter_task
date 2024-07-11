@@ -49,7 +49,8 @@ Widget PhotoBody(
                 Visibility(
                     visible: data.searchQuery.isNotEmpty,
                     child: Expanded(
-                        child: searchPhotoGridView(context, data, true)))
+                        child: searchPhotoGridView(context, data, true))),
+                const Footer()
               ],
             ))
     ],

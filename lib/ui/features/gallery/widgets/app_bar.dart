@@ -30,6 +30,7 @@ class PhotoAppBar extends StatelessWidget implements PreferredSizeWidget {
                 title: SelectableText(
                   cursorColor: primaryColor,
                   album.title ?? "Untitled",
+                  minLines: 1,
                   maxLines: 2,
                   style: const TextStyle(
                       color: Colors.white,
