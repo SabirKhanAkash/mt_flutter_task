@@ -14,10 +14,13 @@ class AlbumRepository {
 
   AlbumRepository({required this.baseUrl, required this.httpClient});
 
+  /// to get the album list data from API
   Future<ApiResponse> getAlbumList(BuildContext context, int? pageNo) async {
     var _data = Provider.of<AlbumDataProvider>(context, listen: false);
     Future.delayed(Duration.zero, () async {
       _data.startLoading();
+
+      /// to start the loading when the API is called
     });
     try {
       final response = await httpClient.get(
@@ -32,10 +35,15 @@ class AlbumRepository {
 
       if (response.statusCode == 200) {
         _data.dismissLoading();
+
+        /// dismiss loading when response is successful
         Console.log("A1. Response from API: ${response.body}");
         return ApiResponse.fromJson(jsonDecode(response.body));
       } else {
         _data.dismissLoading();
+
+        /// also dismiss loading when response is not
+        /// successful
         Console.log("Status Code ${response.statusCode}: ${response.body}");
         switch (response.statusCode) {
           case 401:
@@ -51,16 +59,21 @@ class AlbumRepository {
       }
     } on Exception catch (error) {
       _data.dismissLoading();
+
+      /// also dismiss loading when any error occurs
       showCustomToast(context, "${error.toString()}", "negative");
       throw Exception('An Error Occurred: ${error.toString()}');
     }
   }
 
+  /// to get the searched album list data from API
   Future<ApiResponse> getAlbumSearchList(
       BuildContext context, String? query) async {
     var _data = Provider.of<AlbumDataProvider>(context, listen: false);
     Future.delayed(Duration.zero, () async {
       _data.startLoading();
+
+      /// to start the loading when the API is called
     });
     try {
       final response = await httpClient.get(
@@ -75,10 +88,15 @@ class AlbumRepository {
 
       if (response.statusCode == 200) {
         _data.dismissLoading();
+
+        /// dismiss loading when response is successful
         Console.log("A1. Response from API: ${response.body}");
         return ApiResponse.fromJson(jsonDecode(response.body));
       } else {
         _data.dismissLoading();
+
+        /// also dismiss loading when response is not
+        /// successful
         Console.log("Status Code ${response.statusCode}: ${response.body}");
         switch (response.statusCode) {
           case 401:
@@ -94,6 +112,8 @@ class AlbumRepository {
       }
     } on Exception catch (error) {
       _data.dismissLoading();
+
+      /// also dismiss loading when any error occurs
       showCustomToast(context, "${error.toString()}", "negative");
       throw Exception('An Error Occurred: ${error.toString()}');
     }

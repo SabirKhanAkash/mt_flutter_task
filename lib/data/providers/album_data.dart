@@ -33,43 +33,51 @@ class AlbumDataProvider extends ChangeNotifier {
 
   bool get searchBoxVisibility => _searchBoxVisibility;
 
+  /// to switch view between gridview and listview
   void switchView() {
     _isListViewActive = !_isListViewActive;
     _isGridViewActive = !_isGridViewActive;
     notifyListeners();
   }
 
+  /// to toggle search box visibility when user clicks on it
   void toggleSearchBoxVisibility() {
     _searchQuery = '';
     _searchBoxVisibility = !searchBoxVisibility;
     notifyListeners();
   }
 
+  /// to update the search text
   void updateSearchQuery(String query) {
     _searchQuery = query;
     notifyListeners();
   }
 
+  /// navigate to next page
   void goNextPage() {
     _pageNo = pageNo + 1;
     notifyListeners();
   }
 
+  /// navigate to previous page
   void goPreviousPage() {
     _pageNo = pageNo > 1 ? (pageNo - 1) : pageNo;
     notifyListeners();
   }
 
+  /// to start loading animation
   void startLoading() {
     _isLoading = true;
     notifyListeners();
   }
 
+  /// to stop loading animation
   void dismissLoading() {
     _isLoading = false;
     notifyListeners();
   }
 
+  /// to show empty item screen
   void setNoDataScreen() {
     _isLoading = false;
     _isDataEmpty = true;
@@ -77,12 +85,14 @@ class AlbumDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// to show empty searched item screen
   void setNoSearchedDataScreen() {
     _isSearchDataEmpty = true;
     _searchApiResponse = null;
     notifyListeners();
   }
 
+  /// to populate view with response data
   void populateData(ApiResponse response) {
     _isDataEmpty = false;
     _isLoading = false;
@@ -90,6 +100,7 @@ class AlbumDataProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// to populate searched view with response data
   void populateSearchData(ApiResponse response) {
     _isSearchDataEmpty = false;
     _isLoading = false;

@@ -18,6 +18,7 @@ class Data {
     this.thumbnailUrl,
   });
 
+  /// to process the json response and send to api_response_model
   factory Data.fromJson(Map<dynamic, dynamic> json) {
     return Data(
       id: json['id'],
