@@ -83,17 +83,17 @@ An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies L
       <i>No Result on Photo Search</i>
     </td>
     <td style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/06eabb5f-ba97-405e-9eab-c1d0ac16bc88" width="270" height="570" alt="Photo Preview"/><br>
+      <img src="https://github.com/user-attachments/assets/fc60e6fb-b141-4130-9178-863a983a042a" width="270" height="570" alt="Photo Preview"/><br>
       <i>Photo Preview</i>
     </td>
   </tr>
   <tr>
     <td style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/c8c186f3-58b7-44c2-bea9-d3145377102a" width="270" height="570" alt="Photo Preview (Zoom In)"/><br>
+      <img src="https://github.com/user-attachments/assets/87675f3d-7814-427e-bffa-3117abd06d74" width="270" height="570" alt="Photo Preview (Zoom In)"/><br>
       <i>Photo Preview (Zoom In)</i>
     </td>
     <td style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/b487659d-ab68-471e-b9e7-3470894aca8b" width="270" height="570" alt="Photo Preview (Zoom Out)"/><br>
+      <img src="https://github.com/user-attachments/assets/46361a15-3a4a-49ff-b070-bcfb15345fb7" width="270" height="570" alt="Photo Preview (Zoom Out)"/><br>
       <i>Photo Preview (Zoom Out)</i>
     </td>
   </tr>
