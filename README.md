@@ -22,7 +22,7 @@ An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies L
 - Search any album by the album title
 - See List of Photos
 - Search any photos by the photo title
-- added pagination for both album and photo lists
+- Added pagination for both album and photo lists
 - Preview and Zoom in/out any specific photo
 - Refresh lists by pull-down gesture
 - Switch between Grid-View & List-View of both album and photo list
