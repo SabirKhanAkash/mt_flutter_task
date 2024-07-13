@@ -25,11 +25,19 @@ class _AlbumScreenState extends State<AlbumScreen> {
   @override
   void initState() {
     super.initState();
+
+    /// initialize album viewmodel
     _viewModel = AlbumViewModel(
       AlbumRepository(baseUrl: getBaseUrl(), httpClient: http.Client()),
     );
+
+    /// initialize album data provider
     _data = Provider.of<AlbumDataProvider>(context, listen: false);
+
+    /// initialize text controller for search text
     _textEditingController = TextEditingController();
+
+    /// call album list api function
     getAlbumList(context, _viewModel, _data, null);
   }
 
@@ -39,6 +47,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
     super.dispose();
   }
 
+  /// call album list api function on pull down refresh gesture
   Future<void> _refresh() async {
     getAlbumList(context, _viewModel, _data, null);
   }
@@ -54,7 +63,7 @@ class _AlbumScreenState extends State<AlbumScreen> {
             color: primaryColor,
             onRefresh: _refresh,
             child:
-                AlbumBody(context, data, _viewModel, _textEditingController)),
+                albumBody(context, data, _viewModel, _textEditingController)),
       );
     });
   }

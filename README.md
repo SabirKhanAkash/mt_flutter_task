@@ -3,6 +3,7 @@
 ![Logo or Banner Image](https://github.com/user-attachments/assets/f60275ea-2fa8-4aa4-bd74-2c0b587188f8)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [In-App Screenshots](#in-app-screenshots)
@@ -12,9 +13,11 @@
 7. [Feedback](#feedback)
 
 ## Introduction
+
 An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies Ltd.
 
 ## Features
+
 - See List of Albums
 - Search any album by the album title
 - See List of Photos
@@ -103,11 +106,13 @@ An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies L
 ## Installation
 
 ### Prerequisites
+
 - [Flutter SDK](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.22.2-stable.zip)
 - [Dart SDK](https://storage.googleapis.com/dart-archive/channels/stable/release/3.4.4/sdk/dartsdk-windows-x64-release.zip)
 - [Android Studio](https://developer.android.com/studio)
 
 ### Steps
+
 1. Clone the repository
    ```bash
    git clone https://github.com/SabirKhanAkash/mt_flutter_task.git
@@ -116,7 +121,8 @@ An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies L
    cd mt_flutter_task
 3. Open the project in Android Studio
 4. Run an Android Emulator
-5. Install the necessary dependencies by running these commands in the terminal from the project directory
+5. Install the necessary dependencies by running these commands in the terminal from the project
+   directory
    ```bash
    flutter clean
    flutter pub get
@@ -129,7 +135,12 @@ An Assessment Task for the Flutter Developer (L-1) role at Manush Technologies L
    flutter build apk --release
 
 ## APK Download
-Download the APK file from [here](https://drive.google.com/drive/folders/16AI3EH0M2jq754kDBO1KzBdEA2YXbiIb?usp=sharing)
+
+Download the APK file
+from [here](https://drive.google.com/drive/folders/16AI3EH0M2jq754kDBO1KzBdEA2YXbiIb?usp=sharing)
 
 ## Feedback
-If you discover any bugs or any kind of feedback then create issues [here](https://github.com/SabirKhanAkash/mt_flutter_task/issues/new) & star the repo if you like the project
+
+If you discover any bugs or any kind of feedback then create
+issues [here](https://github.com/SabirKhanAkash/mt_flutter_task/issues/new) & star the repo if you
+like the project

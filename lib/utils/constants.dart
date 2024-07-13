@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mt_flutter_task/data/providers/album_data.dart';
 import 'package:mt_flutter_task/data/providers/photo_data.dart';
 
+/// styling of previous button of album list
 ButtonStyle albumPrevButtonStyle(AlbumDataProvider data) {
   return ButtonStyle(
     shape: WidgetStateProperty.resolveWith<OutlinedBorder>((states) {
@@ -21,6 +22,7 @@ ButtonStyle albumPrevButtonStyle(AlbumDataProvider data) {
   );
 }
 
+/// styling of previous button of photo list
 ButtonStyle photoPrevButtonStyle(PhotoDataProvider data) {
   return ButtonStyle(
     shape: WidgetStateProperty.resolveWith<OutlinedBorder>((states) {
@@ -40,6 +42,7 @@ ButtonStyle photoPrevButtonStyle(PhotoDataProvider data) {
   );
 }
 
+/// styling of next button of album list
 ButtonStyle albumNextButtonStyle(AlbumDataProvider data) {
   return ButtonStyle(
     shape: WidgetStateProperty.resolveWith<OutlinedBorder>((states) {
@@ -59,6 +62,7 @@ ButtonStyle albumNextButtonStyle(AlbumDataProvider data) {
   );
 }
 
+/// styling of next button of photo list
 ButtonStyle photoNextButtonStyle(PhotoDataProvider data) {
   return ButtonStyle(
     shape: WidgetStateProperty.resolveWith<OutlinedBorder>((states) {
@@ -78,6 +82,7 @@ ButtonStyle photoNextButtonStyle(PhotoDataProvider data) {
   );
 }
 
+/// styling of search bar
 final InputDecoration searchBoxDecoration = InputDecoration(
   hintText: 'Search by title',
   hintStyle: const TextStyle(color: Colors.black),
@@ -92,10 +97,12 @@ final InputDecoration searchBoxDecoration = InputDecoration(
   ),
 );
 
+/// used color codes
 const primaryColor = Color(0xff34b6d4);
 const primaryDarkColor = Color(0xff001931);
 const lightGray = Color(0xff4dffffff);
 
+/// used font sizes
 const double fontXXS = 12;
 const double fontXS = 14;
 const double fontS = 16;

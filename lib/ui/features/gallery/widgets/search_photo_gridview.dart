@@ -39,7 +39,7 @@ Widget searchPhotoGridView(
                 itemCount: photos.length,
                 itemBuilder: (context, index) {
                   final photo = photos[index];
-                  return PhotoGridItem(
+                  return photoGridItem(
                       context, photo, photos, crossAxisCount, index);
                 },
               ),

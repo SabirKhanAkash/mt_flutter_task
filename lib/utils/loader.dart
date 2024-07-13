@@ -3,9 +3,15 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 
 class Loader extends StatelessWidget {
-  final double size; // Optional size parameter for the loader
-  final Color color; // Optional color parameter for the loader
-  final String type; // Optional type parameter for the loader
+  final double size;
+
+  /// Optional size parameter for the loader
+  final Color color;
+
+  /// Optional color parameter for the loader
+  final String type;
+
+  /// Optional type parameter for the loader
 
   const Loader(
       {Key? key,
@@ -46,26 +52,9 @@ class Loader extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    // const Text(
-                    //   "Preparing data...",
-                    //   textAlign: TextAlign.center,
-                    //   style: TextStyle(
-                    //       color: primaryColor,
-                    //       fontWeight: FontWeight.normal,
-                    //       fontSize: 16.0),
-                    // ),
                   ],
                 ),
               ),
-            ),
-          );
-        }
-      case "replacing_item":
-        {
-          return Center(
-            child: SpinKitSpinningLines(
-              color: color,
-              size: size,
             ),
           );
         }

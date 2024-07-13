@@ -4,7 +4,7 @@ import 'package:mt_flutter_task/ui/features/gallery/widgets/photo_grid_item.dart
 import 'package:mt_flutter_task/utils/constants.dart';
 import 'package:mt_flutter_task/utils/loader.dart';
 
-Widget PhotoGridView(
+Widget photoGridView(
     BuildContext context, PhotoDataProvider data, bool forSearch) {
   final response = forSearch ? data.searchApiResponse : data.apiResponse;
   final photos = response?.dataList ?? [];
@@ -41,7 +41,7 @@ Widget PhotoGridView(
                   itemCount: photos.length,
                   itemBuilder: (context, index) {
                     final photo = photos[index];
-                    return PhotoGridItem(
+                    return photoGridItem(
                         context, photo, photos, crossAxisCount, index);
                   },
                 ),

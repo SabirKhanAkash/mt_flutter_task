@@ -33,7 +33,7 @@ Widget albumList(
                     textAlign: TextAlign.center,
                   ),
                 )
-              : AlbumListView(context, viewModel, data, false)),
+              : albumListView(context, viewModel, data, false)),
     ),
   );
 }

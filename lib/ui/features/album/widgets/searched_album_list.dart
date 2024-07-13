@@ -33,6 +33,6 @@ Widget searchedAlbumList(
                       textAlign: TextAlign.center,
                     ),
                   )
-                : AlbumListView(context, viewModel, data, true))),
+                : albumListView(context, viewModel, data, true))),
   );
 }

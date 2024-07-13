@@ -39,7 +39,7 @@ Widget searchAlbumGridView(
                 itemCount: albums.length,
                 itemBuilder: (context, index) {
                   final album = albums[index];
-                  return AlbumGridItem(context, album, crossAxisCount);
+                  return albumGridItem(context, album, crossAxisCount);
                 },
               ),
   );

@@ -33,6 +33,6 @@ Widget photoList(
                       textAlign: TextAlign.center,
                     ),
                   )
-                : PhotoListView(context, viewModel, data, false))),
+                : photoListView(context, viewModel, data, false))),
   );
 }

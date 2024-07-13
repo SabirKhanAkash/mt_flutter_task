@@ -9,12 +9,16 @@ import 'package:mt_flutter_task/ui/features/album/widgets/searched_album_list.da
 import 'package:mt_flutter_task/utils/footer.dart';
 import 'package:mt_flutter_task/viewmodel/album_view_model.dart';
 
-Widget AlbumBody(BuildContext context, AlbumDataProvider data,
+Widget albumBody(BuildContext context, AlbumDataProvider data,
     AlbumViewModel viewModel, TextEditingController textEditingController) {
   return Stack(
     children: [
+      /// check in the provider which view preference is active
       data.isListViewActive
-          ? SingleChildScrollView(
+          ?
+
+          /// if view preference is list view
+          SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 verticalDirection: VerticalDirection.down,
@@ -30,7 +34,10 @@ Widget AlbumBody(BuildContext context, AlbumDataProvider data,
                 ],
               ),
             )
-          : Positioned.fill(
+          :
+
+          /// if view preference is grid view
+          Positioned.fill(
               child: Column(
               children: [
                 searchBar(context, data, viewModel, textEditingController),
@@ -39,7 +46,7 @@ Widget AlbumBody(BuildContext context, AlbumDataProvider data,
                 Visibility(
                     visible: !data.searchQuery.isNotEmpty,
                     child:
-                        Expanded(child: AlbumGridView(context, data, false))),
+                        Expanded(child: albumGridView(context, data, false))),
                 Visibility(
                     visible: data.searchQuery.isNotEmpty,
                     child: Expanded(

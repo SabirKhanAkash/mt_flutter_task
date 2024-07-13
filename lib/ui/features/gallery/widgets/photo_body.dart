@@ -9,7 +9,7 @@ import 'package:mt_flutter_task/ui/features/gallery/widgets/searched_photo_list.
 import 'package:mt_flutter_task/utils/footer.dart';
 import 'package:mt_flutter_task/viewmodel/photo_view_model.dart';
 
-Widget PhotoBody(
+Widget photoBody(
     BuildContext context,
     PhotoDataProvider data,
     PhotoViewModel viewModel,
@@ -17,8 +17,12 @@ Widget PhotoBody(
     int? albumId) {
   return Stack(
     children: [
+      /// check in the provider which view preference is active
       data.isListViewActive
-          ? SingleChildScrollView(
+          ?
+
+          /// if view preference is list view
+          SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 verticalDirection: VerticalDirection.down,
@@ -35,7 +39,10 @@ Widget PhotoBody(
                 ],
               ),
             )
-          : Positioned.fill(
+          :
+
+          /// if view preference is grid view
+          Positioned.fill(
               child: Column(
               children: [
                 searchBar(
@@ -45,7 +52,7 @@ Widget PhotoBody(
                 Visibility(
                     visible: !data.searchQuery.isNotEmpty,
                     child:
-                        Expanded(child: PhotoGridView(context, data, false))),
+                        Expanded(child: photoGridView(context, data, false))),
                 Visibility(
                     visible: data.searchQuery.isNotEmpty,
                     child: Expanded(

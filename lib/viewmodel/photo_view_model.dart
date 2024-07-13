@@ -7,11 +7,13 @@ class PhotoViewModel {
 
   PhotoViewModel(this._photoRepository);
 
+  /// to call the photo list repository from this viewmodel
   Future<ApiResponse> getPhotoList(
       BuildContext context, int? pageNo, int? albumId) async {
     return await _photoRepository.getPhotoList(context, pageNo, albumId);
   }
 
+  /// to call the searched photo list repository from this viewmodel
   Future<ApiResponse> getPhotoSearchList(
       BuildContext context, String? query, int? albumId) async {
     return await _photoRepository.getPhotoSearchList(context, query, albumId);

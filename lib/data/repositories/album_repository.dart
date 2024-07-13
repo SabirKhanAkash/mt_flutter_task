@@ -42,8 +42,7 @@ class AlbumRepository {
       } else {
         _data.dismissLoading();
 
-        /// also dismiss loading when response is not
-        /// successful
+        /// also dismiss loading when response is not successful
         Console.log("Status Code ${response.statusCode}: ${response.body}");
         switch (response.statusCode) {
           case 401:
@@ -95,8 +94,7 @@ class AlbumRepository {
       } else {
         _data.dismissLoading();
 
-        /// also dismiss loading when response is not
-        /// successful
+        /// also dismiss loading when response is not successful
         Console.log("Status Code ${response.statusCode}: ${response.body}");
         switch (response.statusCode) {
           case 401:

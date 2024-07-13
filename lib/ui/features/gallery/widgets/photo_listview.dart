@@ -4,7 +4,7 @@ import 'package:mt_flutter_task/ui/features/gallery/photo_list_preview_screen.da
 import 'package:mt_flutter_task/utils/constants.dart';
 import 'package:mt_flutter_task/viewmodel/photo_view_model.dart';
 
-Widget PhotoListView(BuildContext context, PhotoViewModel viewModel,
+Widget photoListView(BuildContext context, PhotoViewModel viewModel,
     PhotoDataProvider data, bool forSearch) {
   return ListView.builder(
     shrinkWrap: true,
@@ -32,11 +32,11 @@ Widget PhotoListView(BuildContext context, PhotoViewModel viewModel,
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    /// navigate to photo preview screen with all photos for swiping
                     builder: (context) => PhotoListPreviewScreen(
                         images: forSearch
                             ? data.searchApiResponse?.dataList ?? []
                             : data.apiResponse?.dataList ?? [],
-                        imageType: photo.title.toString(),
                         startingIndex: index),
                   ),
                 );

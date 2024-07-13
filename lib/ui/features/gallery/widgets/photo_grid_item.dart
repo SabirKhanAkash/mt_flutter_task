@@ -3,7 +3,7 @@ import 'package:mt_flutter_task/data/models/data_model.dart';
 import 'package:mt_flutter_task/ui/features/gallery/photo_list_preview_screen.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 
-Widget PhotoGridItem(BuildContext context, Data photo, List<Data>? photos,
+Widget photoGridItem(BuildContext context, Data photo, List<Data>? photos,
     int crossAxisCount, int startingIndex) {
   return GestureDetector(
     onTap: () {
@@ -11,9 +11,9 @@ Widget PhotoGridItem(BuildContext context, Data photo, List<Data>? photos,
         Navigator.push(
           context,
           MaterialPageRoute(
+            /// navigate to photo preview screen with all photos for swiping
             builder: (context) => PhotoListPreviewScreen(
               images: photos,
-              imageType: photo.title ?? "Untitled",
               startingIndex: startingIndex,
             ),
           ),

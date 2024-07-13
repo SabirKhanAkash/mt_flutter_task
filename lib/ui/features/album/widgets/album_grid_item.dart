@@ -3,13 +3,14 @@ import 'package:mt_flutter_task/data/models/data_model.dart';
 import 'package:mt_flutter_task/ui/features/gallery/photo_screen.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 
-Widget AlbumGridItem(BuildContext context, Data album, int crossAxisCount) {
+Widget albumGridItem(BuildContext context, Data album, int crossAxisCount) {
   return GestureDetector(
     onTap: () {
       if (album != null) {
         Navigator.push(
           context,
           MaterialPageRoute(
+            /// passed the album while going to a photo screen
             builder: (context) => PhotoScreen(album: album),
           ),
         );

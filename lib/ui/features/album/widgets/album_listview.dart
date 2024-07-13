@@ -5,7 +5,7 @@ import 'package:mt_flutter_task/ui/features/gallery/photo_screen.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 import 'package:mt_flutter_task/viewmodel/album_view_model.dart';
 
-Widget AlbumListView(BuildContext context, AlbumViewModel viewModel,
+Widget albumListView(BuildContext context, AlbumViewModel viewModel,
     AlbumDataProvider data, bool forSearch) {
   return ListView.builder(
     shrinkWrap: true,
@@ -33,6 +33,7 @@ Widget AlbumListView(BuildContext context, AlbumViewModel viewModel,
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    /// passed the album while going to a photo screen
                     builder: (context) => PhotoScreen(album: album),
                   ),
                 );

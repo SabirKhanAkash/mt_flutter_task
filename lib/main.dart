@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_splash_screen/flutter_splash_screen.dart';
 import 'package:mt_flutter_task/data/providers/album_data.dart';
 import 'package:mt_flutter_task/data/providers/photo_data.dart';
 import 'package:mt_flutter_task/ui/features/album/album_screen.dart';
 import 'package:provider/provider.dart';
 
-Future<void> main() async {
+void main() async {
   Provider.debugCheckInvalidValueType = null;
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]).then((_) {
-    runApp(const MyApp());
-  });
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -28,6 +22,8 @@ class MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
+    /// to close the splash screen after a certain delay
     hideScreen();
   }
 
@@ -40,6 +36,7 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      /// to setup necessary providers used in the app
       providers: [
         ChangeNotifierProvider<AlbumDataProvider>(
           create: (context) => AlbumDataProvider(),
@@ -49,11 +46,13 @@ class MyAppState extends State<MyApp> {
         ),
       ],
       child: MaterialApp(
-        title: 'MT Task',
+        title: 'MT Gallery App',
         theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
             useMaterial3: true,
             fontFamily: "rubik"),
+
+        /// album list screen will be the home screen
         home: const AlbumScreen(),
       ),
     );

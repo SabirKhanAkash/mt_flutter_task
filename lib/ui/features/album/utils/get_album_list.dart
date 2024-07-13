@@ -7,18 +7,31 @@ Future<void> getAlbumList(BuildContext context, AlbumViewModel viewModel,
     AlbumDataProvider data, String? query) async {
   ApiResponse response;
   response = (query == null)
-      ? await viewModel.getAlbumList(context, data.pageNo)
-      : await viewModel.getAlbumSearchList(context, data.searchQuery);
+      ?
+
+      /// if query params is null get album list response
+      await viewModel.getAlbumList(context, data.pageNo)
+      :
+
+      /// if query params is not null get searched album list response
+      await viewModel.getAlbumSearchList(context, data.searchQuery);
 
   if (response.dataList != null) {
+    /// if response is not empty update view with data
     if (response.dataList!.isNotEmpty) {
       (query == null)
           ? data.populateData(response)
           : data.populateSearchData(response);
-    } else {
+    }
+
+    /// if response is empty update view with empty screen
+    else {
       (query == null) ? data.setNoDataScreen() : data.setNoSearchedDataScreen();
     }
-  } else {
+  }
+
+  /// if response is empty update view with empty screen
+  else {
     (query == null) ? data.setNoDataScreen() : data.setNoSearchedDataScreen();
   }
 }

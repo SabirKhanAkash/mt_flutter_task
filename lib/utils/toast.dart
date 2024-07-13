@@ -42,6 +42,7 @@ Future<void> showCustomToast(
   );
 }
 
+/// dynamic toast leading icon based on toast type
 Icon _getIcon(BuildContext context, String type) {
   switch (type) {
     case "positive":
@@ -55,6 +56,7 @@ Icon _getIcon(BuildContext context, String type) {
   }
 }
 
+/// dynamic toast background color based on toast type
 Color _getColor(BuildContext context, String type) {
   switch (type) {
     case "positive":
@@ -70,6 +72,7 @@ Color _getColor(BuildContext context, String type) {
   }
 }
 
+/// dynamic toast text color based on toast type
 Color _getTextColor(BuildContext context, String type) {
   switch (type) {
     case "positive":

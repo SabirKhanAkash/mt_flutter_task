@@ -34,8 +34,13 @@ Widget searchBar(
                     ? IconButton(
                         icon: const Icon(Icons.clear, color: Colors.black),
                         onPressed: () {
+                          /// to clear the text controller
                           textEditingController.clear();
+
+                          /// to clear the search query
                           data.updateSearchQuery('');
+
+                          /// to call photo list api function
                           getPhotoList(context, viewModel, data, null, albumId);
                         },
                       )

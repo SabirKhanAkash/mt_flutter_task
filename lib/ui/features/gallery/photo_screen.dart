@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 class PhotoScreen extends StatefulWidget {
   final Data album;
 
-  const PhotoScreen({Key? key, required this.album}) : super(key: key);
+  const PhotoScreen({super.key, required this.album});
 
   @override
   State<PhotoScreen> createState() => _PhotoScreenState();
@@ -28,15 +28,24 @@ class _PhotoScreenState extends State<PhotoScreen> {
   @override
   void initState() {
     super.initState();
+
+    /// initialize album viewmodel
     _viewModel = PhotoViewModel(
       PhotoRepository(baseUrl: getBaseUrl(), httpClient: http.Client()),
     );
+
+    /// initialize album data provider
     _data = Provider.of<PhotoDataProvider>(context, listen: false);
+
+    /// initialize text controller for search text
     _textEditingController = TextEditingController();
+
+    /// reset pagination, searched results memory in provider
     Future.delayed(Duration.zero, () {
       _data.init();
     });
 
+    /// call photo list api function
     getPhotoList(context, _viewModel, _data, null, widget.album.id);
   }
 
@@ -46,6 +55,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
     super.dispose();
   }
 
+  /// call photo list api function on pull down refresh gesture
   Future<void> _refresh() async {
     getPhotoList(context, _viewModel, _data, null, widget.album.id);
   }
@@ -60,7 +70,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
         body: RefreshIndicator(
             color: primaryColor,
             onRefresh: _refresh,
-            child: PhotoBody(context, data, _viewModel, _textEditingController,
+            child: photoBody(context, data, _viewModel, _textEditingController,
                 widget.album.id)),
       );
     });

@@ -4,7 +4,7 @@ import 'package:mt_flutter_task/ui/features/album/widgets/album_grid_item.dart';
 import 'package:mt_flutter_task/utils/constants.dart';
 import 'package:mt_flutter_task/utils/loader.dart';
 
-Widget AlbumGridView(
+Widget albumGridView(
     BuildContext context, AlbumDataProvider data, bool forSearch) {
   final response = forSearch ? data.searchApiResponse : data.apiResponse;
   final albums = response?.dataList ?? [];
@@ -41,7 +41,7 @@ Widget AlbumGridView(
                   itemCount: albums.length,
                   itemBuilder: (context, index) {
                     final album = albums[index];
-                    return AlbumGridItem(context, album, crossAxisCount);
+                    return albumGridItem(context, album, crossAxisCount);
                   },
                 ),
     ),

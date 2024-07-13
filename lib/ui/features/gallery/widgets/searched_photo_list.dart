@@ -33,6 +33,6 @@ Widget searchedPhotoList(
                       textAlign: TextAlign.center,
                     ),
                   )
-                : PhotoListView(context, viewModel, data, true))),
+                : photoListView(context, viewModel, data, true))),
   );
 }
